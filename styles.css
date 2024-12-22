@@ -1,0 +1,20 @@
+body.theme-light {
+    background-color: #f9fafb;
+    color: #1a202c;
+  }
+  
+  body.theme-dark {
+    background-color: #1a202c;
+    color: #f9fafb;
+  }
+  
+  body.theme-dark header {
+    background-color: #2d3748;
+  }
+  
+  body.theme-dark button {
+    background-color: #4a5568;
+    color: white;
+  }
+  
+  
