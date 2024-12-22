@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Armin's Video Game Reviews</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-light">
+  <header class="p-4 bg-gray-800 text-white flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Video Game Reviews</h1>
+    <button id="themeSwitcher" class="bg-blue-500 p-2 rounded">Switch Theme</button>
+  </header>
+
+  <main class="p-4 space-y-8">
+    <section id="gallery" class="space-y-4">
+      <h2 class="text-xl font-bold">Game Gallery</h2>
+      <div class="grid grid-cols-3 gap-4">
+        <img src="image1.jpg" alt="Game 1" class="thumbnail cursor-pointer">
+        <img src="image2.jpg" alt="Game 2" class="thumbnail cursor-pointer">
+        <img src="image3.jpg" alt="Game 3" class="thumbnail cursor-pointer">
+      </div>
+    </section>
+
+    <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center">
+      <div class="bg-white p-4 rounded shadow-lg">
+        <img id="modalImage" src="" alt="Game Preview" class="w-96">
+        <button id="closeModal" class="mt-4 bg-red-500 text-white p-2 rounded">Close</button>
+      </div>
+    </div>
+
+    <section id="faq">
+      <h2 class="text-xl font-bold">FAQ</h2>
+      <button class="bg-gray-300 p-2 rounded toggle-content">Toggle FAQs</button>
+      <div class="mt-2 hidden">
+        <p>Q1: How to review a game?</p>
+        <p>A1: Submit a review through the contact form below.</p>
+      </div>
+    </section>
+
+    <section id="accordion" class="space-y-2">
+      <h2 class="text-xl font-bold">Categories</h2>
+      <div>
+        <button class="accordion-header bg-gray-300 p-2 rounded">Action</button>
+        <div class="accordion-content hidden p-2 bg-gray-100">Games like Doom, Call of Duty.</div>
+      </div>
+      <div>
+        <button class="accordion-header bg-gray-300 p-2 rounded">Adventure</button>
+        <div class="accordion-content hidden p-2 bg-gray-100">Games like Uncharted, Zelda.</div>
+      </div>
+    </section>
+
+    <section id="contactForm" class="space-y-4">
+      <h2 class="text-xl font-bold">Submit a Review</h2>
+      <form id="reviewForm">
+        <input type="text" id="name" placeholder="Your Name" class="p-2 border rounded w-full" required>
+        <input type="email" id="email" placeholder="Your Email" class="p-2 border rounded w-full" required>
+        <input type="password" id="password" placeholder="Password (min 6 characters)" class="p-2 border rounded w-full" required>
+        <textarea id="review" placeholder="Your Review" class="p-2 border rounded w-full" required></textarea>
+        <button type="submit" class="bg-green-500 text-white p-2 rounded">Submit</button>
+      </form>
+    </section>
+
+    <section id="reviews" class="space-y-4">
+      <h2 class="text-xl font-bold">Game Reviews</h2>
+      <table class="w-full border">
+        <thead>
+          <tr>
+            <th class="border p-2">Game</th>
+            <th class="border p-2">Review</th>
+            <th class="border p-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="reviewList"></tbody>
+      </table>
+    </section>
+
+    <section id="weather">
+      <h2 class="text-xl font-bold">Weather in Your Area</h2>
+      <button id="fetchWeather" class="bg-blue-500 text-white p-2 rounded">Get Weather</button>
+      <p id="weatherInfo" class="mt-4"></p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
